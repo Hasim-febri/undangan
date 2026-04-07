@@ -31,10 +31,12 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--primary-font-color);
     overflow-y: hidden;
+      background: linear-gradient(145deg, #faf5f0 0%, #f5ede6 100%);
 }
 
 body.active {
     overflow-y: auto;
+      background: linear-gradient(145deg, #faf5f0 0%, #f5ede6 100%);
 }
 
 body::-webkit-scrollbar {
