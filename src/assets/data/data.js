@@ -31,7 +31,18 @@ export const data = {
                 finish: 'Selesai'
             }
         },
-        reception: {
+        reception1: {
+            year: '2026',
+            month: 'Mei',
+            date: '31',
+            day: 'Minggu',
+            hours: {
+                start: '11.00',
+                finish: 'Selesai'
+            }
+        },
+        address1: 'Sumber Agung IV RT 028 RW 010 Secang Kec Secang Kab Magelang'
+        ,reception2: {
             year: '2026',
             month: 'Juni',
             date: '02',
@@ -41,12 +52,13 @@ export const data = {
                 finish: 'Selesai'
             }
         },
-        address: 'Gedung Serbaguna Dsn Cepit Ds Pagergunung Kec Bulu Kab Temanggung'
+        address2: 'Gedung Serbaguna Dsn Cepit Ds Pagergunung Kec Bulu Kab Temanggung'
     },
 
     link: {
         calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
-        map: 'https://maps.app.goo.gl/uqczPT14uXJ6jXQn8',
+        map1: 'https://maps.app.goo.gl/2sLG19xf8M7tbRt28',
+        map2: 'https://maps.app.goo.gl/uqczPT14uXJ6jXQn8',
     },
 
     galeri: [

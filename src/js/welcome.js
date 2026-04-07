@@ -22,9 +22,16 @@ export const welcome = () => {
     const generateParameterContent = () => {
         const name = document.querySelector('#name');
         const params = getQueryParameter('to');
+        const alamat = getQueryParameter('alamat'); 
+        console.log(params,alamat)
 
+        // Tampilkan nama tamu
         if (params) {
-            weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>${params}</span>`;
+            if (alamat) {
+                weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>${params}</span>${alamat}`;
+            }else{
+                weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>${params}</span>`;
+            }
             name.value = params;
         } else {
             weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>Teman-teman semua</span>`;
