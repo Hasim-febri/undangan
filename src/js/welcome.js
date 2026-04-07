@@ -28,7 +28,7 @@ export const welcome = () => {
         // Tampilkan nama tamu
         if (params) {
             if (alamat) {
-                weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>${params}</span>${alamat}`;
+                weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>${params}</span>di ${alamat}`;
             }else{
                 weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>${params}</span>`;
             }
