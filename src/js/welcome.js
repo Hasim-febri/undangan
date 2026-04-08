@@ -59,21 +59,39 @@ export const welcome = () => {
             isPlaying = !isPlaying;
         });
     };
+    const playIntroAndTransition = () => {
 
-    openWeddingButton.addEventListener('click', () => {
-        addClassElement(document.body, 'active');
-        addClassElement(welcomeElement, 'hide');
+        const introVideo = document.getElementById('introVideo');
+        introVideo.style.display = 'block';
+        introVideo.currentTime = 0;
+        introVideo.play();
 
         setTimeout(() => {
+            homeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             addClassElement(homeElement, 'active');
             addClassElement(navbarElement, 'active');
             addClassElement(audioButton, 'show');
             removeClassElement(iconButton, 'bx-play-circle');
             addClassElement(iconButton, 'bx-pause-circle');
-            audioMusic.play();
-        }, 1500);
+        }, 5000);
+
+    };
+
+    openWeddingButton.addEventListener('click', () => {
+        addClassElement(document.body, 'active');
+        addClassElement(welcomeElement, 'hide');
+        playIntroAndTransition();
+        // setTimeout(() => {
+        //     addClassElement(homeElement, 'active');
+        //     addClassElement(navbarElement, 'active');
+        //     addClassElement(audioButton, 'show');
+        //     removeClassElement(iconButton, 'bx-play-circle');
+        //     addClassElement(iconButton, 'bx-pause-circle');
+        //     audioMusic.play();
+        // }, 1500);
 
         setTimeout(() => {
+            audioMusic.play();
             addClassElement(audioButton, 'active');
         }, 3000);
     });

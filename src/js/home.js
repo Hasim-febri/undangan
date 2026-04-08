@@ -4,6 +4,9 @@ import {monthNameToNumber} from "../utils/helper.js";
 export const home = () => {
     const homeContainer = document.querySelector('.home');
     const [_, figureElement, timeElement, homeTime, calendarAnchor] = homeContainer.children;
+    
+    const introVideo = document.getElementById('introVideo');        
+    introVideo.style.display = 'none';
 
     const generateFigureContent = ({bride}) => {
         const {L: {name: brideLName}, P: {name: bridePName}, couple: coupleImage} = bride;
