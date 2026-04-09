@@ -113,6 +113,8 @@ export const wishas = () => {
             color: generateRandomColor(),
         };
 
+        console.log(comentar);
+
         try {
             const response = await comentarService.getComentar();
 
