@@ -11,11 +11,25 @@ import {comentarService} from "../services/comentarService.js";
 
 export const wishas = () => {
     const wishasContainer = document.querySelector('.wishas');
-    const [_, form] = wishasContainer.children[2].children;
-    const [peopleComentar, ___, containerComentar] = wishasContainer.children[3].children;
-    const buttonForm = form.children[6];
-    const pageNumber = wishasContainer.querySelector('.page-number');
-    const [prevButton, nextButton] = wishasContainer.querySelectorAll('.button-grup button');
+
+// FORM
+const form = wishasContainer.querySelector('form');
+
+// BUTTON SUBMIT
+const buttonForm = form.querySelector('button');
+
+// LIST KOMENTAR
+const containerComentar = wishasContainer.querySelector('ul');
+
+// TEXT JUMLAH ORANG (ambil yang di komentar, bukan yang di Love Gift)
+const peopleComentar = wishasContainer.querySelectorAll('p')[1];
+
+// PAGE NUMBER
+const pageNumber = wishasContainer.querySelector('.page-number');
+
+// BUTTON PAGINATION
+const prevButton = wishasContainer.querySelector('.button-grup button:first-child');
+const nextButton = wishasContainer.querySelector('.button-grup button:last-child');
 
     const listItemBank = (data) => (
         `  <figure data-aos="zoom-in" data-aos-duration="1000">
@@ -74,10 +88,6 @@ export const wishas = () => {
     };
 
     let lengthComentar;
-    let currentPage = 1;
-    let itemsPerPage = 4;
-    let startIndex = 0;
-    let endIndex = itemsPerPage;
 
     const initialComentar = async () => {
         containerComentar.innerHTML = `<h1 style="font-size: 1rem; margin: auto">Loading...</h1>`;
@@ -117,8 +127,6 @@ export const wishas = () => {
             color: generateRandomColor(),
         };
 
-        console.log(comentar);
-
         try {
             const response = await comentarService.getComentar();
 
@@ -137,7 +145,10 @@ export const wishas = () => {
     });
 
     // click prev & next
-    
+    let currentPage = 1;
+    let itemsPerPage = 4;
+    let startIndex = 0;
+    let endIndex = itemsPerPage;
 
     const updatePageContent = async () => {
         containerComentar.innerHTML = '<h1 style="font-size: 1rem; margin: auto">Loading...</h1>';
