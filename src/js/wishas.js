@@ -74,6 +74,10 @@ export const wishas = () => {
     };
 
     let lengthComentar;
+    let currentPage = 1;
+    let itemsPerPage = 4;
+    let startIndex = 0;
+    let endIndex = itemsPerPage;
 
     const initialComentar = async () => {
         containerComentar.innerHTML = `<h1 style="font-size: 1rem; margin: auto">Loading...</h1>`;
@@ -133,10 +137,7 @@ export const wishas = () => {
     });
 
     // click prev & next
-    let currentPage = 1;
-    let itemsPerPage = 4;
-    let startIndex = 0;
-    let endIndex = itemsPerPage;
+    
 
     const updatePageContent = async () => {
         containerComentar.innerHTML = '<h1 style="font-size: 1rem; margin: auto">Loading...</h1>';
