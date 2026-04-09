@@ -67,6 +67,7 @@ export const welcome = () => {
         introVideo.play();
 
         setTimeout(() => {
+            introVideo.style.display = 'none';
             homeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             addClassElement(homeElement, 'active');
             addClassElement(navbarElement, 'active');

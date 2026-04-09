@@ -1,6 +1,6 @@
 :root {
     --primary-font-color: '#212529';
-    --bg-color: #f8f9fa;
+    --bg-color: #f8fbfd;
 
     --fontSize-heading-lg: 3rem;
     --fontSize-heading-base: 2.8rem;
@@ -31,12 +31,12 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--primary-font-color);
     overflow-y: hidden;
-      background: linear-gradient(145deg, #faf5f0 0%, #f5ede6 100%);
+      background: linear-gradient(145deg, #e69545 0%, #a09b95 100%);
 }
 
 body.active {
     overflow-y: auto;
-      background: linear-gradient(145deg, #faf5f0 0%, #f5ede6 100%);
+      background: linear-gradient(145deg, #e69545 0%, #a09b95 100%);
 }
 
 body::-webkit-scrollbar {
@@ -81,7 +81,8 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* pastikan di belakang semua konten */
+    z-index: 9999;
+    background: #000;
 }
 
 .video-overlay {
@@ -90,10 +91,14 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: rgba(8, 120, 231, 0.685); */
-    z-index: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+    pointer-events: none;
 }
+.section{
+    width:80%;
 
+}
 
 @keyframes rotate {
     0% {
