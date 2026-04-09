@@ -1,6 +1,6 @@
 :root {
     --primary-font-color: '#212529';
-    --bg-color: #f8fbfd;
+    --bg-color: linear-gradient(145deg, #fff6e8 0%, #f5ede6 100%);;
 
     --fontSize-heading-lg: 3rem;
     --fontSize-heading-base: 2.8rem;
@@ -25,6 +25,16 @@ html {
     box-sizing: border-box;
     text-decoration: none;
     outline: none;
+}
+.intro-video {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease, transform 1.2s ease;
+}
+
+.intro-video.fade-out {
+    opacity: 0;
+    transform: scale(1.1);
 }
 
 body {

@@ -65,16 +65,20 @@ export const welcome = () => {
         introVideo.style.display = 'block';
         introVideo.currentTime = 0;
         introVideo.play();
+        introVideo.playbackRate = 2.0;
 
         setTimeout(() => {
-            introVideo.style.display = 'none';
-            homeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            addClassElement(homeElement, 'active');
-            addClassElement(navbarElement, 'active');
-            addClassElement(audioButton, 'show');
-            removeClassElement(iconButton, 'bx-play-circle');
-            addClassElement(iconButton, 'bx-pause-circle');
-        }, 5000);
+            introVideo.classList.add('fade-out');
+            setTimeout(() => {
+                introVideo.style.display = 'none';
+                homeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                addClassElement(homeElement, 'active');
+                addClassElement(navbarElement, 'active');
+                addClassElement(audioButton, 'show');
+                removeClassElement(iconButton, 'bx-play-circle');
+                addClassElement(iconButton, 'bx-pause-circle');
+            },1000);
+        }, 2000);
 
     };
 
