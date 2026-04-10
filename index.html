@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Hasim Febriyanto">
-    <link href="src/css/bootstrap.min.css" rel="stylesheet">
-    <link href="src/css/css2.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Naskh+Arabic:wght@400..700&family=Sacramento&display=swap"
+          rel="stylesheet">
 
     <!-- Box icon -->
-    <link href='src/css/boxicons.min.css' rel='stylesheet'>
-    
-    <link rel="stylesheet" href="src/css/aos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
     <style>
@@ -139,7 +139,7 @@
         <!-- <i class="bx bx-heart" aria-hidden="true"></i> -->
     </section>
 
-    <section class="galeri section" id="galeri" aria-labelledby="galeri-title">
+    <!-- <section class="galeri section" id="galeri" aria-labelledby="galeri-title">
         <div class="container" data-aos="zoom-in" data-aos-duration="1000">
             <h2 id="galeri-title">Galeri</h2>
             <figure aria-label="galeri box"></figure>
@@ -159,8 +159,7 @@
                 <i class='bx bx-x' aria-hidden="true"></i>
             </button>
         </div>
-        <!-- <i class="bx bx-heart" aria-hidden="true"></i> -->
-    </section>
+    </section> -->
 
     <section class="wishas section" id="wishas">
         <div>
@@ -236,8 +235,8 @@
 </footer>
 
 
-<script src="src/js/aos.js"></script>
-<script href="src/js/alert.js" ></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="src/main.js" type="module"></script>
 <script>
     function getParameterByName(name) {
@@ -270,6 +269,24 @@
             }
         }
     });
+    
+    async function kirimKeGoogleSheets(data) {
+        const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        
+        try {
+            const response = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            console.log('Data berhasil dikirim ke Google Sheets');
+        } catch (error) {
+            console.error('Error mengirim ke Google Sheets:', error);
+        }
+    }
 </script>
 </body>
 </html>

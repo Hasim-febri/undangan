@@ -28,7 +28,7 @@ export const comentarService = {
             });
 
             // return await response.json();
-            return true;
+             return { success: true };
 
         } catch (error) {
             console.error('Post error:', error);

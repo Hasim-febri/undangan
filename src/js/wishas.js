@@ -116,50 +116,63 @@ const nextButton = wishasContainer.querySelector('.button-grup button:last-child
     };
 
     form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            buttonForm.textContent = 'Loading...';
-            const comentar = {
-                id: generateRandomId(),
-                name: e.target.name.value,
-                status: e.target.status.value === 'y' ? 'Hadir' : 'Tidak Hadir',
-                message: e.target.message.value,
-                date: getCurrentDateTime(),
-                color: generateRandomColor(),
-            };
-    
-            try {
-                Swal.fire({
-                    title: 'Mengirim...',
-                    allowOutsideClick: false,
-                    didOpen: () => {
-                        Swal.showLoading();
-                    }
-                });
-    
-                await comentarService.addComentar(comentar);
-    
-                Swal.close();
-    
-                Swal.fire({
-                    title: 'Berhasil 🎉',
-                    text: 'Ucapan kamu sudah terkirim',
-                    icon: 'success'
-                });
-    
-                const newData = await comentarService.getComentar();
-    
+        e.preventDefault();
+        buttonForm.textContent = 'Loading...';
+
+        const comentar = {
+            id: generateRandomId(),
+            name: e.target.name.value,
+            status: e.target.status.value === 'y' ? 'Hadir' : 'Tidak Hadir',
+            message: e.target.message.value,
+            date: getCurrentDateTime(),
+            color: generateRandomColor(),
+        };
+
+        try {
+            Swal.fire({
+                title: 'Mengirim...',
+                allowOutsideClick: false,
+                didOpen: () => Swal.showLoading()
+            });
+
+            await comentarService.addComentar(comentar);
+
+            Swal.close();
+
+            Swal.fire({
+                title: 'Berhasil 🎉',
+                text: 'Ucapan kamu sudah terkirim',
+                icon: 'success'
+            });
+
+            const newData = await comentarService.getComentar();
+
+            if (newData && newData.comentar) {
                 lengthComentar = newData.comentar.length;
-    
-                peopleComentar.textContent = `${lengthComentar} Orang telah mengucapkan`;
-    
-                renderElement(newData.comentar.slice(0, itemsPerPage), containerComentar, listItemComentar);
-            } catch (error) {
-                return `Error : ${error.message}`;
-            } finally {
-                buttonForm.textContent = 'Kirim';
-                form.reset();
+
+                peopleComentar.textContent =
+                    `${lengthComentar} Orang telah mengucapkan`;
+
+                renderElement(
+                    newData.comentar.slice(0, itemsPerPage),
+                    containerComentar,
+                    listItemComentar
+                );
+
+                containerComentar.scrollIntoView({ behavior: 'smooth' });
             }
-        });
+
+        } catch (error) {
+            Swal.fire({
+                title: 'Error ❌',
+                text: error.message,
+                icon: 'error'
+            });
+        } finally {
+            buttonForm.textContent = 'Kirim';
+            form.reset();
+        }
+    });
 
     // click prev & next
     let currentPage = 1;
