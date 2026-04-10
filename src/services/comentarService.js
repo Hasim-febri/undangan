@@ -23,13 +23,12 @@ export const comentarService = {
         try {
             const response = await fetch(data.api, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                mode: 'no-cors', // WAJIB
                 body: JSON.stringify(comentar),
             });
 
-            return await response.json();
+            // return await response.json();
+            return true;
 
         } catch (error) {
             console.error('Post error:', error);
