@@ -40,8 +40,9 @@ const nextButton = wishasContainer.querySelector('.button-grup button:last-child
     );
 
     const initialBank = () => {
-        const wishasBank = wishasContainer.children[1];
-        const [_, __, containerBank] = wishasBank.children;
+        // const wishasBank = wishasContainer.children[1];
+        // const [_, __, containerBank] = wishasBank.children;
+        const containerBank = document.getElementById('bank');
 
         renderElement(data.bank, containerBank, listItemBank);
 

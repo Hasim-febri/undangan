@@ -87,21 +87,21 @@ export const data = {
     bank: [
         {
             id: 1,
-            name: 'Hasim',
-            icon: './src/assets/images/bca.png',
-            rekening: '12345678'
+            name: 'Hasim Febriyanto',
+            icon: './src/assets/images/mandiri.png',
+            rekening: '1850003541841'
         },
         {
             id: 2,
-            name: 'Cahya',
-            icon: './src/assets/images/bri.png',
-            rekening: '12345678'
+            name: 'Cahya Wulansari',
+            icon: './src/assets/images/bni.png',
+            rekening: '1238332610'
         },
     ],
 
     audio: './src/assets/audio/wedding.mp3',
 
-    api: 'https://script.google.com/macros/s/AKfycby8J08zXVKrcaNChezwgKd8g3OinsRZ8NpyKwttCzAVoyEDPccwPJ-xF7ciQdndrEl4pA/exec',
+    api: 'https://script.google.com/macros/s/AKfycbz-9ogInaetXzpZIe-89H6kI6ESpKTVCZ6Zwi3KUwiB4wKrZ6Wvb8nS3mpj1PC2guyA1w/exec',
 
     navbar: [
         {
