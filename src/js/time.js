@@ -2,6 +2,8 @@ import { data } from "../assets/data/data.js";
 
 export const time = () => {
     const akad = document.getElementById('akad');
+    const akadrep = document.getElementById('akadrep');
+    const mapakad = document.getElementById('mapakad');
     const rep1 = document.getElementById('resepsi1');
     // const rep2 = document.getElementById('resepsi2');
     const maprep1 = document.getElementById('maprep1');
@@ -19,8 +21,10 @@ export const time = () => {
     rep1.innerHTML = createTimeListItem('Resepsi', data.time.reception2);
     // rep2.innerHTML = createTimeListItem('Resepsi 2', data.time.reception2);
     maprep1.href = data.link.map2;
+    mapakad.href = data.link.map1;
     // maprep2.href = data.link.map2;
     butrep1.textContent = data.time.address2;
+    akadrep.textContent = data.time.address1;
     // butrep2.textContent = data.time.address2;
 
     // mapLink.href = data.link.map;
