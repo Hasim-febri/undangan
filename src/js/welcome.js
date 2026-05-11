@@ -23,7 +23,6 @@ export const welcome = () => {
         const name = document.querySelector('#name');
         const params = getQueryParameter('to');
         const alamat = getQueryParameter('alamat'); 
-        console.log(params,alamat)
 
         // Tampilkan nama tamu
         if (params) {
@@ -41,7 +40,7 @@ export const welcome = () => {
     const initialAudio = () => {
         let isPlaying = false;
 
-        audioMusic.innerHTML = `<source src=${data.audio} type="audio/mp3"/>`;
+        audioMusic.innerHTML = `<source src=${data.audio} type="audio/mpeg"/>`;
 
         audioButton.addEventListener('click', () => {
 

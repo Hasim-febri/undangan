@@ -43,8 +43,17 @@ const nextButton = wishasContainer.querySelector('.button-grup button:last-child
         // const wishasBank = wishasContainer.children[1];
         // const [_, __, containerBank] = wishasBank.children;
         const containerBank = document.getElementById('bank');
+       const header = `
+            <h2 data-aos="zoom-in" data-aos-duration="1000">
+                Love Gift
+            </h2>
 
-        renderElement(data.bank, containerBank, listItemBank);
+            <p data-aos="zoom-in" data-aos-duration="1000">
+                Tanpa mengurangi rasa hormat, bagi anda yang ingin 
+                memberikan tanda kasih untuk kami, dapat melalui:
+            </p>
+        `;
+        renderElement(data.bank, containerBank, header + listItemBank);
 
         containerBank.querySelectorAll('button').forEach((button) => {
             button.addEventListener('click', async (e) => {
