@@ -5,7 +5,7 @@ export const home = () => {
     const homeContainer = document.querySelector('.home');
     const [_, figureElement, timeElement, homeTime, calendarAnchor] = homeContainer.children;
     
-    const introVideo = document.getElementById('introVideo');        
+    const introVideo = document.getElementById('bgVideo');        
     introVideo.style.display = 'none';
 
     const generateFigureContent = ({bride}) => {
