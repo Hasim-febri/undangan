@@ -5,7 +5,7 @@ export const home = () => {
     const homeContainer = document.querySelector('.home');
     const [_, figureElement, timeElement, homeTime, calendarAnchor] = homeContainer.children;
     
-    const introVideo = document.getElementById('bgVideo');        
+    const introVideo = document.getElementById('introVideo');        
     introVideo.style.display = 'none';
 
     const generateFigureContent = ({bride}) => {
@@ -18,7 +18,7 @@ export const home = () => {
     };
 
     const generateTimeContent = ({time}) => {
-        const {year, month, date, day} = time.reception1;
+        const {year, month, date, day} = time.marriage;
         return `
         <time datetime="${year}-${String(monthNameToNumber(month)).padStart(2, '0')}-${String(date).padStart(2, '0')}">
             ${day}, ${date} ${month} ${year}
